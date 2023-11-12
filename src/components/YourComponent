@@ -1,0 +1,23 @@
+import React, { useState } from 'react';
+import PropTypes from 'prop-types';
+
+function YourComponent({ setTasks }) {
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  const handleCategorySelection = (category) => {
+    setSelectedCategory(category);
+    setTasks(
+      category === "All" ? TASKS : TASKS.filter((task) => task.category === category)
+    );
+  };
+
+  return (
+    // Your component JSX
+  );
+}
+
+YourComponent.propTypes = {
+  setTasks: PropTypes.func.isRequired,
+};
+
+export default YourComponent;
